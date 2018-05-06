@@ -34,7 +34,7 @@ class SkeletonAspect extends Aspect{
     {
         $parent_output = parent::display_aspect();
         $new_output = '<p>Some markup.</p>';
-		return $output;
+		return $parent_output . $new_output;
 	}
 
     public function parse()
