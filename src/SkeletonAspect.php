@@ -5,7 +5,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
 use imonroe\crps\Aspect;
+use imonroe\crps\AspectFactory;
+use imonroe\crps\Subject;
+use imonroe\ana\Ana;
+use Validator;
 
 class SkeletonAspect extends Aspect{
 
@@ -25,9 +31,9 @@ class SkeletonAspect extends Aspect{
 		return parent::create_form($subject_id, $this->aspect_type);
 	}
 
-    public function edit_form($id)
+    public function edit_form()
     {
-		return parent::edit_form($id);
+		return parent::edit_form();
 	}
 
     public function display_aspect()
